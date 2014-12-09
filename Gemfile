@@ -1,5 +1,24 @@
 source 'https://rubygems.org'
 
+gem "octokit", "~> 3.0"
+
+gem 'omniauth-github'
+
+gem "haml-rails"
+
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'pry-rails'
+  gem 'quiet_assets'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'valid_attribute'
+  gem 'guard'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
