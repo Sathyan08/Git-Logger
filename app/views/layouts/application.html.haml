@@ -15,6 +15,13 @@
 
     = render partial: "layouts/header"
 
-    = yield
+    .row
+      .large-12.columns
+        .notice
+          = notice
+        .alert
+          = alert
+
+        = yield
 
     = javascript_include_tag "application"
