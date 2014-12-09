@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'foundation-rails'
+
 gem "octokit", "~> 3.0"
 
 gem 'omniauth-github'
