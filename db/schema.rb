@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141210212953) do
     t.string   "uid",                        null: false
     t.string   "name"
     t.string   "avatar"
+    t.string   "provider",                   null: false
     t.boolean  "synced",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"

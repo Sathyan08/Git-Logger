@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :uid, null: false
       t.string :name
       t.string :avatar
+      t.string :provider, null: false
 
       t.boolean :synced, default: false
 
