@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       flash[:alert] = error_message
     end
 
-    redirect_to_root
+    redirect_to root_path
   end
 
   def destroy
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
 
   def failure
     flash[:alert] = "Unable to sign in."
-    redirect_to_back_or_root
+    redirect_to root_path
   end
 
   private

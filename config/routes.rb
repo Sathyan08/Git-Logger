@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   root "static_pages#home"
   get "/auth/:provider/callback", to: "sessions#create"
   get "/signout", to: "sessions#destroy", as: :signout
+
+  resource :session, only: [:new, :create, :destroy] do
+    get "failure", on: :member
+  end
+
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
