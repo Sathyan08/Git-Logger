@@ -2,7 +2,8 @@
   %nav.top-bar(data-topbar)
     %section.top-bar-section
       %ul.left
-        %li= link_to "Git Logs", root_path
+        %li.name
+          %h1= link_to "Git Logs", root_path
       %ul.right
         - if user_signed_in?
           %li= link_to "Signed in as #{current_user.username}", user_path(current_user)
