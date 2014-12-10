@@ -1,13 +1,8 @@
 .contain-to-grid.full-top-bar
   %nav.top-bar(data-topbar)
-    %ul.title-area
-      %li.name
-        %h1= link_to "Git Logger", root_path
-      %li.toggle-topbar.menu-icon
-        %a(href="#")
-          %span Menu
-
     %section.top-bar-section
+      %ul.left
+        %li= link_to "Git Logs", root_path
       %ul.right
         - if user_signed_in?
           %li= link_to "Signed in as #{current_user.username}", user_path(current_user)
@@ -15,25 +10,3 @@
 
         - else
           %li= link_to "Sign In With GitHub", new_session_path
-
-      %ul.left
-      / %li= link_to "Browse", lessons_path
-      / %li= link_to "Getting Started", start_path
-      / %li.has-form
-      /   .row.collapse
-      /     = form_tag lessons_path, method: :get do
-      /       .large-8.small-9.columns
-      /         = text_field_tag :query, params[:query]
-      /       .large-4.small-3.columns
-      /         = submit_tag "Search", class: "alert button expand"
-
-
-    #notifications.row
-      - flash.each do |type, message|
-        .alert-box(class=type data-alert)
-          = message
-          %a.close(href="#") &times;
-
-    .row
-      .small-12.columns
-        #content
