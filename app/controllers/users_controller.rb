@@ -5,7 +5,10 @@ class UsersController < ApplicationController
 
     if !@user.synced
       repo_data = get_repo_data(@user)
-      repo_data.each { |repo| repo.create_repo_from_github }
+      repo_data.each do |repo|
+        @new_repo = Repo.create_repo_from_github(repo)
+        RepoListing.find_or_initialize_by(user: @user, repo: @new_repo)
+      end
     end
   end
 
