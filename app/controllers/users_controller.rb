@@ -10,6 +10,8 @@ class UsersController < ApplicationController
         RepoListing.find_or_create_from_github(repo, @user)
       end
     end
+
+    binding.pry
   end
 
   private

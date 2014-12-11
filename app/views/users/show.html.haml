@@ -2,5 +2,5 @@
   = "#{@user.username}'s Repos"
 
 %ul
-  -@users.repos.each do |repo|
+  -@user.repos.each do |repo|
     %li= repo.name
