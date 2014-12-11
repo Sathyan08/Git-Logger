@@ -8,6 +8,8 @@ class UsersController < ApplicationController
       repo_data.each do |repo|
         Repo.create_repo_from_github(repo)
         RepoListing.find_or_create_from_github(repo, @user)
+        # issues = client.issue_comments(repo["full_name"])
+        # binding.pry
       end
     end
 
