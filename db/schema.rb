@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211043009) do
+ActiveRecord::Schema.define(version: 20141211045013) do
+
+  create_table "repo_listings", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "repo_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "repos", force: true do |t|
     t.string   "name",       null: false
