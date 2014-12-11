@@ -18,14 +18,4 @@ class User < ActiveRecord::Base
     user.save!
     user
   end
-
-  def get_repo_data
-    repos_owned = client.user(user.gitname).rels[:repos].get.data
-    repos_subscribed = client.user(user.gitname).rels[:subscriptions].get.data
-    repos_starred = client.user(user.gitname).rels[:starred].get.data
-
-    binding.pry
-
-    repos_owned + repos_subscribed + repos_starred
-  end
 end
