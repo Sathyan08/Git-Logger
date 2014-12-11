@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :provider, presence: true
 
+  has_many :repo_listings
+  has_many :repos, through: :repo_listings
+
   def self.find_or_create_from_omniauth(auth)
     account_keys = { uid: auth["uid"], provider: auth["provider"] }
 

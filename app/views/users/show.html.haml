@@ -1,0 +1,6 @@
+%h1
+  = "#{@user.username}'s Repos"
+
+%ul
+  -@users.repos.each do |repo|
+    %li= repo.name
