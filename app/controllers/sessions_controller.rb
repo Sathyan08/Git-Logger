@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       flash[:alert] = error_message
     end
 
-    redirect_to root_path
+    redirect_to current_user
   end
 
   def destroy
